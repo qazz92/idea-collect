@@ -37,6 +37,10 @@ type Query {
     users(orderBy: [OrderByClause!] @orderBy): [User!]! @paginate @middleware(checks: ["auth:api"])
     # user 정보 가져오기
     user(id: ID! @eq): User @find @middleware(checks: ["auth:api"])
+    # memo
+    memo(id: ID! @eq): Memo @find @middleware(checks: ["auth:api"])
+    # memo list
+    memos(id: ID! @eq): [Memo!]! @paginate @middleware(checks: ["auth:api"])
 }
 
 ## 나머지 친구들
@@ -104,6 +108,45 @@ type User {
     email: String!
     social_id: String!
     avatar: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type Memo {
+    id: ID!
+    contents: String!
+    user_id : Int!
+    like_count : Int!
+    deleted_at: DateTime!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type MemoFeedback {
+    id: ID!
+    contents: String!
+    memo_id: Int!
+    user_id : Int!
+    like_count : Int!
+    deleted_at: DateTime!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type MemoLike {
+    id: ID!
+    memo_id: Int!
+    user_id : Int!
+    type : Int!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
+type MemoFeedbackLike {
+    id: ID!
+    memo_id: Int!
+    user_id : Int!
+    type : Int!
     created_at: DateTime!
     updated_at: DateTime!
 }

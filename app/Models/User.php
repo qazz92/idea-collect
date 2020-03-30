@@ -40,6 +40,8 @@ use Laravel\Passport\HasApiTokens;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereSocialId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $remember_token
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRememberToken($value)
  */
 class User extends Authenticatable
 {
