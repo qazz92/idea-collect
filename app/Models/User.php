@@ -7,7 +7,6 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -16,32 +15,24 @@ use Laravel\Passport\HasApiTokens;
  * Class User
  *
  * @property int $id
- * @property string $name
+ * @property string $nickname
  * @property string $email
- * @property string $social_id
- * @property string $avatar
+ * @property string $pw
+ * @property string $remember_token
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @package App\Models
- * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Client[] $clients
- * @property-read int|null $clients_count
- * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
- * @property-read int|null $notifications_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
- * @property-read int|null $tokens_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereAvatar($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereSocialId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereNickname($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User wherePw($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereUpdatedAt($value)
  * @mixin \Eloquent
- * @property string|null $remember_token
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereRememberToken($value)
  */
 class User extends Authenticatable
 {
@@ -49,10 +40,23 @@ class User extends Authenticatable
 
 	protected $table = 'users';
 
-	protected $fillable = [
-		'name',
-		'email',
-		'social_id',
-		'avatar'
+	protected $hidden = [
+		'remember_token'
 	];
+
+	protected $fillable = [
+		'nickname',
+		'email',
+		'pw',
+		'remember_token'
+	];
+
+    public function getAuthPassword()
+    {
+        return $this->pw;
+    }
+
+    public function memo() {
+        return $this->hasMany(Memo::class, 'user_id','id');
+    }
 }

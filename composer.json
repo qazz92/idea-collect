@@ -15,8 +15,9 @@
         "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
         "mll-lab/laravel-graphql-playground": "^2.0",
-        "nuwave/lighthouse": "^4.9",
-        "reliese/laravel": "^0.0.14"
+        "nuwave/lighthouse": "^4.11.0",
+        "reliese/laravel": "^0.0.14",
+      "ext-pdo": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",

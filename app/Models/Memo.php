@@ -37,24 +37,32 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Memo withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Models\Memo withoutTrashed()
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MemoFeedback[] $memoFeedback
+ * @property-read int|null $memo_feedback_count
  */
 class Memo extends Model
 {
-	use SoftDeletes;
-	protected $table = 'memo';
+    use SoftDeletes;
+    protected $table = 'memo';
 
-	protected $casts = [
-		'user_id' => 'int',
-		'like_count' => 'int'
-	];
+    protected $casts = [
+        'user_id' => 'int',
+        'like_count' => 'int'
+    ];
 
-	protected $fillable = [
-		'contents',
-		'user_id',
-		'like_count'
-	];
+    protected $fillable = [
+        'contents',
+        'user_id',
+        'like_count'
+    ];
 
-	public function memoFeedback() {
-	    return $this->hasMany(MemoFeedback::class,'memo_id','id');
+    public function memoFeedback()
+    {
+        return $this->hasMany(MemoFeedback::class, 'memo_id', 'id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'user_id','id');
     }
 }

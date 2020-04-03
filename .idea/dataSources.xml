@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://yoonjoohye.xyz:3306/idea</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="SQLite - test.sqlite" uuid="0017b03b-ea28-45b6-810d-ed5a33baa8dc">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/database/test.sqlite</jdbc-url>
+    </data-source>
   </component>
 </project>

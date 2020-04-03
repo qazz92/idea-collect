@@ -46,20 +46,19 @@ type Query {
 ## 나머지 친구들
 
 ###
-#mutation {
-#    createEduMentor(
-#        user_no: 46018
-#        real_name: "test"
-#        nickname: "test_nick"
-#        display_name: "test_dis"
-#        company: "test_com"
-#        brief_history: "test_brief"
-#        introduce: "test_intro"){
-#        no
-#        real_name
-#        created_at
-#    }
-#}
+type Mutation {
+    createUser(
+        nickname: String @rules(apply: ["required", "unique:users"])
+        email: String @rules(apply: ["required", "unique:users", "email"])
+        pw : String @hash @rules(apply: ["required", "min:8"])
+    ) : User! @create
+
+    createMemo(
+        contents: String!
+        user_id: Int!
+        like_count: Int!
+    ) : Memo! @create
+}
 ###
 
 ###
@@ -104,10 +103,10 @@ enum SortOrder {
 
 type User {
     id: ID!
-    name: String!
+    nickname: String!
     email: String!
-    social_id: String!
-    avatar: String!
+    pw: String!
+    remember_token: String
     created_at: DateTime!
     updated_at: DateTime!
 }
@@ -120,6 +119,7 @@ type Memo {
     deleted_at: DateTime!
     created_at: DateTime!
     updated_at: DateTime!
+    user: User!
 }
 
 type MemoFeedback {

@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -15,10 +14,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('nickname');
             $table->string('email')->unique();
-            $table->string('social_id');
-            $table->string('avatar');
+            $table->string('pw');
             $table->rememberToken();
             $table->timestamps();
         });
