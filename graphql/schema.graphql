@@ -41,6 +41,8 @@ type Query {
     memo(id: ID! @eq): Memo @find @middleware(checks: ["auth:api"])
     # memo list
     memos(id: ID! @eq): [Memo!]! @paginate @middleware(checks: ["auth:api"])
+    # 나의 유저 정보
+    me: User @auth
 }
 
 ## 나머지 친구들
@@ -50,8 +52,8 @@ type Mutation {
     createUser(
         nickname: String @rules(apply: ["required", "unique:users"])
         email: String @rules(apply: ["required", "unique:users", "email"])
-        pw : String @hash @rules(apply: ["required", "min:8"])
-    ) : User! @create
+        pw : String @rules(apply: ["required", "min:8"])
+    ) : String @field(resolver: "RegisterMutator")
 
     createMemo(
         contents: String!
