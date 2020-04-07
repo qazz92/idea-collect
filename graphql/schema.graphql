@@ -36,7 +36,7 @@ type Query {
     # user list 가져오기
     users(orderBy: [OrderByClause!] @orderBy): [User!]! @paginate @middleware(checks: ["auth:api"])
     # user 정보 가져오기
-    user(id: ID! @eq): User @find
+    user(id: ID! @eq): User @find @middleware(checks: ["auth:api"])
     # memo
     memo(id: ID! @eq): Memo @find @middleware(checks: ["auth:api"])
     # memo list
@@ -58,6 +58,11 @@ type Mutation {
         user_id: Int!
         like_count: Int!
     ) : Memo! @create @middleware(checks: ["auth:api"])
+
+    login(
+        email: String!
+        pw: String!
+    ): String @field(resolver: "AuthMutator")
 }
 ###
 
