@@ -59,6 +59,12 @@ type Mutation {
         like_count: Int!
     ) : Memo! @create @middleware(checks: ["auth:api"])
 
+    ##
+    #    mutation {
+    #       login(
+    #        email:"testtest@test.com"
+    #        pw:"12341234")
+    #   }
     login(
         email: String!
         pw: String!
