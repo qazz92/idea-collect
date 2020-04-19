@@ -116,6 +116,7 @@ enum SortOrder {
 
 type User {
     id: ID!
+    master: Int!
     nickname: String!
     email: String!
     pw: String!
@@ -124,10 +125,20 @@ type User {
     updated_at: DateTime!
 }
 
+type MemoSubject {
+    id: ID!
+    subject: String!
+    user_id : Int!
+    deleted_at: DateTime!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+
 type Memo {
     id: ID!
     contents: String!
     user_id : Int!
+    subject_id : Int!
     like_count : Int!
     deleted_at: DateTime!
     created_at: DateTime!
@@ -157,7 +168,7 @@ type MemoLike {
 
 type MemoFeedbackLike {
     id: ID!
-    memo_id: Int!
+    memo_feedback_id: Int!
     user_id : Int!
     type : Int!
     created_at: DateTime!

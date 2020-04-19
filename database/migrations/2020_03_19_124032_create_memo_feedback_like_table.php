@@ -15,7 +15,7 @@ class CreateMemoFeedbackLikeTable extends Migration
     {
         Schema::create('memo_feedback_like', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('memo_id');
+            $table->unsignedBigInteger('memo_feedback_id');
             $table->bigInteger('user_id');
             $table->bigInteger('type')->default(1);
             $table->timestamps();

@@ -22,6 +22,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * @package App\Models
+ * @property-read \App\Models\Memo $memo
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\MemoFeedbackLike[] $memoFeedbackLike
+ * @property-read int|null $memo_feedback_like_count
+ * @property-read \App\Models\User $user
  * @method static bool|null forceDelete()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MemoFeedback newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\MemoFeedback newQuery()
@@ -57,4 +61,16 @@ class MemoFeedback extends Model
 		'user_id',
 		'like_count'
 	];
+
+    public function user() {
+        return $this->belongsTo(User::class,'user_id','id');
+    }
+
+    public function memo() {
+        return $this->belongsTo(Memo::class,'memo_id','id');
+    }
+
+    public function memoFeedbackLike() {
+        return $this->hasMany(MemoFeedbackLike::class,'memo_feedback_id','id');
+    }
 }

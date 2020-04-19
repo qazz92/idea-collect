@@ -5,7 +5,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2020-04-15 14:25:19.
+    * Generated on 2020-04-19 10:43:53.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -38,6 +38,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -207,6 +209,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -376,6 +380,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -545,6 +551,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -714,6 +722,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -883,6 +893,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -1052,6 +1064,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,
@@ -1221,6 +1235,8 @@ namespace PHPSTORM_META {
         'Illuminate\Routing\Contracts\ControllerDispatcher' => \Illuminate\Routing\ControllerDispatcher::class,
         'Illuminate\Session\Middleware\StartSession' => \Illuminate\Session\Middleware\StartSession::class,
         'Laravel\Socialite\Contracts\Factory' => \Laravel\Socialite\SocialiteManager::class,
+        'League\OAuth2\Server\AuthorizationServer' => \League\OAuth2\Server\AuthorizationServer::class,
+        'League\OAuth2\Server\ResourceServer' => \League\OAuth2\Server\ResourceServer::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
         'Nuwave\Lighthouse\Execution\GraphQLRequest' => \Nuwave\Lighthouse\Execution\LighthouseRequest::class,
         'Nuwave\Lighthouse\GraphQL' => \Nuwave\Lighthouse\GraphQL::class,

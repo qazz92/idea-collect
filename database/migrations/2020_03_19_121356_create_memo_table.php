@@ -16,6 +16,8 @@ class CreateMemoTable extends Migration
             $table->bigIncrements('id');
             $table->text('contents');
             $table->bigInteger('user_id');
+            $table->unsignedBigInteger('subject_id');
+            $table->tinyInteger('is_feedback');
             $table->bigInteger('like_count');
             $table->softDeletes();
             $table->timestamps();
