@@ -58,13 +58,13 @@ type Mutation {
 
     createMemoSubject(
         subject: String!
-        user_id : Int!
+        user_id : Int! @rules(apply: ["required", "exists:users,id"])
     ) : MemoSubject! @create @middleware(checks: ["auth:api"])
 
     createMemo(
         contents: String!
-        subject_id: Int!
-        user_id: Int!
+        subject_id: Int! @rules(apply: ["required", "exists:memo_subject,id"])
+        user_id: Int! @rules(apply: ["required", "exists:users,id"])
         like_count: Int!
     ) : Memo! @create @middleware(checks: ["auth:api"])
 
