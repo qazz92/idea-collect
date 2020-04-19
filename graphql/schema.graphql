@@ -63,6 +63,7 @@ type Mutation {
 
     createMemo(
         contents: String!
+        subject_id: Int!
         user_id: Int!
         like_count: Int!
     ) : Memo! @create @middleware(checks: ["auth:api"])
