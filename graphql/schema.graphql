@@ -43,8 +43,6 @@ type Query {
     memos(id: ID! @eq): [Memo!]! @paginate @middleware(checks: ["auth:api"])
     # 나의 유저 정보
     me: User @auth @middleware(checks: ["auth:api"])
-
-
 }
 
 ## 나머지 친구들
@@ -56,6 +54,12 @@ type Mutation {
         email: String @rules(apply: ["required", "unique:users", "email"])
         pw : String @rules(apply: ["required", "min:8"])
     ) : String @field(resolver: "RegisterMutator")
+
+
+    createMemoSubject(
+        subject: String!
+        user_id : Int!
+    ) : MemoSubject! @create @middleware(checks: ["auth:api"])
 
     createMemo(
         contents: String!
