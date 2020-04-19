@@ -64,7 +64,12 @@ class User extends Authenticatable
 		'remember_token'
 	];
 
-	public function memoSubject() {
+	public function getAuthPassword()
+    {
+        return $this->pw;
+    }
+
+    public function memoSubject() {
 	    return $this->hasMany(MemoSubject::class,'user_id','id');
     }
 

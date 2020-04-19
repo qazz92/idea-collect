@@ -43,6 +43,8 @@ type Query {
     memos(id: ID! @eq): [Memo!]! @paginate @middleware(checks: ["auth:api"])
     # 나의 유저 정보
     me: User @auth @middleware(checks: ["auth:api"])
+
+
 }
 
 ## 나머지 친구들

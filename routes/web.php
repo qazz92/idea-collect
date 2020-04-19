@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/privacy', 'PrivacyController@index');
+Route::get('/dev/get', 'DevController@get');
+
 
 Route::get('login/google', 'Auth\LoginController@redirectToProvider')->name('login.google');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback')->name('login.google.callback');
