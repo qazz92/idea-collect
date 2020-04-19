@@ -43,6 +43,8 @@ class CreateMasterUser extends Command
         $nickname = $this->ask('닉넴?');
         $password = $this->secret('비번?');
 
+        echo $password."\n";
+
         if ($this->confirm('만든다?')) {
             $model = new User();
             $model->master = 1;
