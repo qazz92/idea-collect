@@ -49,6 +49,7 @@ type Query {
 
 ###
 type Mutation {
+
     createUser(
         nickname: String @rules(apply: ["required", "unique:users"])
         email: String @rules(apply: ["required", "unique:users", "email"])
@@ -57,7 +58,7 @@ type Mutation {
 
 
     createMemoSubject(
-        subject: String!
+        subject: String! @rules(apply: ["required", "unique:subject"])
         user_id : Int! @rules(apply: ["required", "exists:users,id"])
     ) : MemoSubject! @create @middleware(checks: ["auth:api"])
 
@@ -66,8 +67,27 @@ type Mutation {
         subject_id: Int! @rules(apply: ["required", "exists:memo_subject,id"])
         user_id: Int! @rules(apply: ["required", "exists:users,id"])
         like_count: Int!
+        is_feedback: Int!
     ) : Memo! @create @middleware(checks: ["auth:api"])
 
+    createMemoFeedback(
+        contents: String!
+        memo_id: Int! @rules(apply: ["required", "exists:memo,id"])
+        user_id : Int! @rules(apply: ["required", "exists:users,id"])
+        like_count : Int!
+    ) : MemoFeedback @create @middleware(checks: ["auth:api"])
+
+    createMemoLike(
+        memo_id: Int! @rules(apply: ["required", "exists:memo,id"])
+        user_id : Int! @rules(apply: ["required", "exists:users,id"])
+        type : Int!
+    ) : MemoLike @create @middleware(checks: ["auth:api"])
+
+    createMemoFeedbackLike(
+        memo_feedback_id: Int! @rules(apply: ["required", "exists:memo_feedback,id"])
+        user_id : Int! @rules(apply: ["required", "exists:users,id"])
+        type : Int!
+    ) : MemoFeedbackLike @create @middleware(checks: ["auth:api"])
     ##
     #    mutation {
     #       login(
@@ -147,6 +167,7 @@ type Memo {
     user_id : Int!
     subject_id : Int!
     like_count : Int!
+    is_feedback: Int!
     deleted_at: DateTime!
     created_at: DateTime!
     updated_at: DateTime!
